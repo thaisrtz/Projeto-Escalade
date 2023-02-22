@@ -1,0 +1,60 @@
+body {
+    font-family: montserrat;
+    font-size: 20px;
+    text-align: left;
+    background: #f3f3f3;
+    color: #545454;
+    line-height: 28px;
+    display: inline;
+    margin: 0px;
+}
+header{
+    background: #545454;
+    height: 170px;
+    color: #ddf1f4;
+    width: 100%;
+    margin: 0px;
+}
+.caixa{
+    position: absolute;
+    top: 50px;
+    left: 90px;
+}
+#logo{
+    height: 100px;
+    position: absolute;
+    left: 1580px;
+    top: 40px;
+    margin: auto;
+}
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 25px;
+}
+.html {
+    position: absolute;
+    top: 200px;
+    left: 90px;
+    display: inline-block;
+}
+ol li {
+    padding: 5px 50px;
+}
+h3 {
+    line-height: 40px;
+    font-size: 25px;
+    color: #545454;
+}
+.css {
+    position: absolute;
+    top: 500px;
+    left: 90px;
+    display: inline-block;
+}
+h4 {
+    line-height: 40px;
+    font-size: 25px;
+    color: #545454;
+}
