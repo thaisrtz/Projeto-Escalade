@@ -14,6 +14,7 @@ header{
     color: #ddf1f4;
     width: 100%;
     margin: 0px;
+    border-bottom: 5px solid #2fb188;
 }
 .caixa{
     position: absolute;
