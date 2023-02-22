@@ -35,10 +35,10 @@ h2 {
     font-size: 25px;
 }
 .html {
-    position: absolute;
-    top: 200px;
+    position: relative;
+    top: 20px;
     left: 90px;
-    display: inline-block;
+    display: block;
 }
 ol li {
     padding: 5px 50px;
@@ -49,10 +49,10 @@ h3 {
     color: #545454;
 }
 .css {
-    position: absolute;
-    top: 500px;
+    position: relative;
+    top: 50px;
     left: 90px;
-    display: inline-block;
+    display: block;
 }
 h4 {
     line-height: 40px;
