@@ -34,11 +34,11 @@ def jogar():
             print("Você precisa digitar um número entre 1 e 100!")
             continue
 
-        acerto = numero_secreto == chute
+        victory = numero_secreto == chute
         maior = chute > numero_secreto
         menor = chute < numero_secreto
 
-        if(acerto):
+        if(victory):
             print("Você acertou!")
             break
 
@@ -55,7 +55,7 @@ def jogar():
 
     print("Fim do jogo!")
     print ("O número secreto era ", numero_secreto)
-    if(acerto):
+    if(victory):
         print("Você fez {} pontos!". format(pontos))
     else:
         print ("Você não fez nenhum ponto.")
