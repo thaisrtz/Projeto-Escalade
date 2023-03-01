@@ -3,15 +3,12 @@ def jogar():
     print("Bem vindo ao jogo de forca")
     print("*****************************")
 
-    secret_word = "maca".upper()
-    right_letters = []
+    secret_word = "paralelepipedo".upper()
+    right_letters = ["_" for letter in secret_word]
 
     defeat = False
     victory = False
     wrong_guess = 0
-
-    for letter in secret_word:
-        right_letters.append("_")
 
     print(right_letters)
     while (not defeat and not victory):
