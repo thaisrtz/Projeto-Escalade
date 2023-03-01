@@ -1,9 +1,20 @@
+import random
 def jogar():
     print("*****************************")
     print("Bem vindo ao jogo de forca")
     print("*****************************")
 
-    secret_word = "paralelepipedo".upper()
+    archive = open ("words.txt", "r")
+    words = []
+    for line in archive:
+        line = line.strip()
+        words.append(line)
+
+    archive.close()
+
+    num = random.randrange (0,len(words))
+    secret_word = words[num].upper()
+
     right_letters = ["_" for letter in secret_word]
 
     defeat = False
