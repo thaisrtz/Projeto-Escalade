@@ -31,3 +31,16 @@ direçao
 caminho
 futebol
 futsal
+volei
+cachorro
+papagaio
+professor
+advogado
+python
+forca
+medico
+dentista
+artista
+cantor
+motorista
+pintor

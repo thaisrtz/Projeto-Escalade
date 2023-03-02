@@ -21,6 +21,7 @@ def jogar():
         else:
             wrong_guess += 1
             print ("Você errou! Restam {} tentativas.".format(6-wrong_guess))
+            hangman_drawing(wrong_guess)
 
         defeat = wrong_guess == 6
         victory = "_" not in right_letters
@@ -28,8 +29,8 @@ def jogar():
 
     if (victory):
         print_victory_message()
-    if (defeat):
-        print_defeat_message()
+    else:
+        print_defeat_message(secret_word)
 
 def print_opening_message():
     print("*****************************")
@@ -52,6 +53,48 @@ def secret_word_generator():
 def secret_right_letters(word):
     return ["_" for letter in word]
 
+def hangman_drawing(wrong_guess):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if(wrong_guess == 1):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if(wrong_guess == 2):
+        print(" |      (_)   ")
+        print(" |       |    ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(wrong_guess == 3):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(wrong_guess == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(wrong_guess == 5):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (wrong_guess == 7):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+    print(" |            ")
+    print("_|___         ")
+    print()
 def receiving_guess():
     guess = input("Digite uma letra: ")
     guess = guess.strip().upper()
@@ -66,10 +109,37 @@ def right_guess_marker(guess, right_letters, secret_word):
 
 def print_victory_message():
     print("Você ganhou!")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
 
-def print_defeat_message():
-    print("Você perdeu!")
+def print_defeat_message(secret_word):
     print("A palavra secreta era: ", secret_word)
+    print("Puxa, você foi enforcado!")
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print(" /                   \      ")
+    print(" /                   \    ")
+    print(" }  XXXXX     XXXXX  {    ")
+    print(" |  XXXXX     XXXXX  |      ")
+    print(" |   XXX       XXX   |      ")
+    print(" |         A         |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I_I_I_I_I_I_I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
 
 if (__name__ == "__main__"):
     jogar()
