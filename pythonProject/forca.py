@@ -32,6 +32,8 @@ def jogar():
     else:
         print_defeat_message(secret_word)
 
+    input("Enter para sair")
+
 def print_opening_message():
     print("*****************************")
     print("Bem vindo ao jogo de forca")
