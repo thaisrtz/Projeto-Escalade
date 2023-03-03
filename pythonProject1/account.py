@@ -20,3 +20,15 @@ class Account:
     def transfer(self, value, destiny):
         self.withdraw(value)
         destiny.deposit(value)
+
+    def get_balance(self):
+        return self.__balance
+
+    def get_holder(self):
+        return self.__holder
+
+    def get_limit(self):
+        return self.__limit
+
+    def set_limit(self, limit):
+        self.__limit = limit
