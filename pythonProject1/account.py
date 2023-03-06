@@ -14,21 +14,32 @@ class Account:
     def deposit(self, value):
         self.__balance += value
 
+    def can_withdraw(self, withdrawal_amount):
+        available = self.__balance + self.__limit
+        return withdrawal_amount <= available
+
     def withdraw(self, value):
-        self.__balance -= value
+        if(self.can_withdraw(value)):
+            self.__balance -= value
+        else:
+            print("O valor ultrapassa o limite de sua conta.")
 
     def transfer(self, value, destiny):
         self.withdraw(value)
         destiny.deposit(value)
 
-    def get_balance(self):
+    @property
+    def balance(self):
         return self.__balance
 
-    def get_holder(self):
+    @property
+    def holder(self):
         return self.__holder
 
-    def get_limit(self):
+    @property
+    def limit(self):
         return self.__limit
 
-    def set_limit(self, limit):
+    @limit.setter
+    def limit(self, limit):
         self.__limit = limit
