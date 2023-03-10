@@ -41,10 +41,10 @@ class Show(Program):
         return f'{self._name} - Year: {self.year} - Seasons: {self.seasons} - {self._likes} likes'
 
 
-class Playlist:
+class Playlist(list):
     def __init__(self, name, programs):
         self.name = name
-        self.programs = programs
+        super().__init__(programs)
 
     def size(self):
         return len(self.programs)
@@ -52,7 +52,8 @@ class Playlist:
 
 psycho = Movie('psycho', 1960, 109)
 vertigo = Movie('vertigo', 1958, 128)
-fightclub =Movie('fight club', 1999, 139)
+fightclub = Movie('fight club', 1999, 139)
+deadpool = Movie('deadpool', 2016, 108)
 sopranos = Show('the sopranos', 1999, 6)
 sharpobjects = Show('sharp objects', 2018, 1)
 hunterxhunter = Show('hunter x hunter', 2011, 5)
@@ -66,9 +67,11 @@ sharpobjects.liked()
 sharpobjects.liked()
 hunterxhunter.liked()
 hunterxhunter.liked()
+deadpool.liked()
+deadpool.liked()
 
-movies_and_shows = [psycho, vertigo, fightclub, sopranos, sharpobjects, hunterxhunter]
-program_playlist = Playlist('programs playlist', program_playlist)
+movies_and_shows = [psycho, vertigo, fightclub, deadpool, sopranos, sharpobjects, hunterxhunter]
+programs_playlist = Playlist('programs playlist', movies_and_shows)
 
-for program in program_playlist.programs:
+for program in programs_playlist:
     print(program)
