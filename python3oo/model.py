@@ -44,10 +44,15 @@ class Show(Program):
 class Playlist(list):
     def __init__(self, name, programs):
         self.name = name
-        super().__init__(programs)
+        self._programs = programs
 
+    @property
+    def listing(self):
+        return self._programs
+
+    @property
     def size(self):
-        return len(self.programs)
+        return len(self._programs)
 
 
 psycho = Movie('psycho', 1960, 109)
@@ -73,5 +78,7 @@ deadpool.liked()
 movies_and_shows = [psycho, vertigo, fightclub, deadpool, sopranos, sharpobjects, hunterxhunter]
 programs_playlist = Playlist('programs playlist', movies_and_shows)
 
-for program in programs_playlist:
+print(f'Playlist size: {len(programs_playlist.listing)} movies and/or shows')
+
+for program in programs_playlist.listing:
     print(program)
