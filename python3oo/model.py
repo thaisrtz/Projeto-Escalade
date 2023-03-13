@@ -16,8 +16,8 @@ class Program:
         return self._name
 
     @name.setter
-    def name(self, new_name):
-        self._name = new_name.title()
+    def name(self, name):
+        self._name = name
 
     def __str__(self):
         return f'{self._name} - Year: {self.year} - {self._likes} likes'
@@ -29,7 +29,7 @@ class Movie(Program):
         self.duration = duration
 
     def __str__(self):
-        return f'{self._name} - Year: {self.year} - Duration: {self.duration} min - {self._likes} likes'
+        return f'{self.name} - Year: {self.year} - Duration: {self.duration} min - {self.likes} likes'
 
 
 class Show(Program):
@@ -38,20 +38,22 @@ class Show(Program):
         self.seasons = seasons
 
     def __str__(self):
-        return f'{self._name} - Year: {self.year} - Seasons: {self.seasons} - {self._likes} likes'
+        return f'{self.name} - Year: {self.year} - Seasons: {self.seasons} - {self.likes} likes'
 
 
-class Playlist(list):
+class Playlist():
     def __init__(self, name, programs):
         self.name = name
         self._programs = programs
+
+    def __getitem__(self, item):
+        return self._programs[item]
 
     @property
     def listing(self):
         return self._programs
 
-    @property
-    def size(self):
+    def __len__(self):
         return len(self._programs)
 
 
@@ -78,7 +80,8 @@ deadpool.liked()
 movies_and_shows = [psycho, vertigo, fightclub, deadpool, sopranos, sharpobjects, hunterxhunter]
 programs_playlist = Playlist('programs playlist', movies_and_shows)
 
-print(f'Playlist size: {len(programs_playlist.listing)} movies and/or shows')
+print(f'Playlist size: {len(programs_playlist)} movies and/or shows')
 
-for program in programs_playlist.listing:
+
+for program in programs_playlist:
     print(program)
